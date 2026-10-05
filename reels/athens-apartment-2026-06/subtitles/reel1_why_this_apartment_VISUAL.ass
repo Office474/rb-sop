@@ -1,0 +1,105 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,HeeboX 900,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,2,80,80,560,177
+Style: Hook,HeeboX 900,92,&H00000000,&H00000000,&H0000D7FF,&H0000D7FF,0,0,0,0,100,100,0,0,3,22,0,5,60,60,0,177
+Style: Mini,HeeboX 900,50,&H00000000,&H00000000,&H0000D7FF,&H0000D7FF,0,0,0,0,100,100,0,0,3,12,0,5,60,60,0,177
+Style: Tag,HeeboX 800,46,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,0,0,0,0,100,100,0,0,3,14,0,5,60,60,0,177
+Style: Chk,HeeboX 800,52,&H00FFFFFF,&H00FFFFFF,&H40000000,&H40000000,0,0,0,0,100,100,0,0,3,14,0,6,60,60,0,177
+Style: Shape,HeeboX 900,10,&H0000D7FF,&H0000D7FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,177
+Style: Big,HeeboX 900,230,&H0000D7FF,&H0000D7FF,&H00000000,&H96000000,0,0,0,0,100,100,0,0,1,10,6,5,0,0,0,177
+Style: BigLbl,HeeboX 900,72,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,0,0,0,0,100,100,0,0,1,6,3,5,0,0,0,177
+Style: CTA1,HeeboX 800,72,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,4,0,5,80,80,0,177
+Style: CTA2,HeeboX 900,96,&H00000000,&H00000000,&H0000D7FF,&H0000D7FF,0,0,0,0,100,100,0,0,3,26,0,5,80,80,0,177
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 9,0:00:00.00,0:00:38.80,Shape,,0,0,0,,{\an7\pos(0,0)\1c&HFFFFFF&\1a&HA0&\p1}m 0 0 l 1080 0 l 1080 12 l 0 12{\p0}
+Dialogue: 10,0:00:00.00,0:00:38.80,Shape,,0,0,0,,{\an7\pos(0,0)\clip(1080,0,1080,12)\t(0,38800,\clip(0,0,1080,12))\p1}m 0 0 l 1080 0 l 1080 12 l 0 12{\p0}
+Dialogue: 6,0:00:00.00,0:00:04.60,Hook,,0,0,0,,{\pos(540,330)\fscx20\fscy20\t(0,220,\fscx112\fscy112)\t(220,340,\fscx100\fscy100)\fad(0,150)}‏למה בחרנו דווקא‏\N‏את הדירה הזאת?‏
+Dialogue: 6,0:00:04.60,0:00:38.80,Mini,,0,0,0,,{\pos(540,120)\fad(200,0)}‏למה דווקא הדירה הזאת?‏
+Dialogue: 6,0:00:00.50,0:00:04.60,Tag,,0,0,0,,{\pos(540,495)\fad(250,150)}‏אתונה, יוון  |  לפני שיפוץ‏
+Dialogue: 7,0:00:13.60,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,260)\fscx0\fscy0\t(0,180,\fscx120\fscy120)\t(180,280,\fscx100\fscy100)\p1}m 26 0 b 40 0 52 12 52 26 b 52 40 40 52 26 52 b 12 52 0 40 0 26 b 0 12 12 0 26 0{\p0}
+Dialogue: 8,0:00:13.60,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,260)\1c&H000000&\fscx0\fscy0\t(100,280,\fscx100\fscy100)\p1}m 13 27 l 22 36 l 39 17 l 44 22 l 22 44 l 8 31{\p0}
+Dialogue: 7,0:00:13.65,0:00:38.80,Chk,,0,0,0,,{\an6\move(1180,260,950,260,0,260)\fad(120,0)}‏כניסה ומבואה מרשימות‏
+Dialogue: 7,0:00:22.60,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,360)\fscx0\fscy0\t(0,180,\fscx120\fscy120)\t(180,280,\fscx100\fscy100)\p1}m 26 0 b 40 0 52 12 52 26 b 52 40 40 52 26 52 b 12 52 0 40 0 26 b 0 12 12 0 26 0{\p0}
+Dialogue: 8,0:00:22.60,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,360)\1c&H000000&\fscx0\fscy0\t(100,280,\fscx100\fscy100)\p1}m 13 27 l 22 36 l 39 17 l 44 22 l 22 44 l 8 31{\p0}
+Dialogue: 7,0:00:22.65,0:00:38.80,Chk,,0,0,0,,{\an6\move(1180,360,950,360,0,260)\fad(120,0)}‏מעלית תקינה‏
+Dialogue: 7,0:00:26.90,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,460)\fscx0\fscy0\t(0,180,\fscx120\fscy120)\t(180,280,\fscx100\fscy100)\p1}m 26 0 b 40 0 52 12 52 26 b 52 40 40 52 26 52 b 12 52 0 40 0 26 b 0 12 12 0 26 0{\p0}
+Dialogue: 8,0:00:26.90,0:00:38.80,Shape,,0,0,0,,{\an5\pos(1000,460)\1c&H000000&\fscx0\fscy0\t(100,280,\fscx100\fscy100)\p1}m 13 27 l 22 36 l 39 17 l 44 22 l 22 44 l 8 31{\p0}
+Dialogue: 7,0:00:26.95,0:00:38.80,Chk,,0,0,0,,{\an6\move(1180,460,950,460,0,260)\fad(120,0)}‏בניין מתוחזק‏
+Dialogue: 7,0:00:34.30,0:00:34.33,Big,,0,0,0,,{\pos(540,930)}6
+Dialogue: 7,0:00:34.33,0:00:34.37,Big,,0,0,0,,{\pos(540,930)}12
+Dialogue: 7,0:00:34.37,0:00:34.40,Big,,0,0,0,,{\pos(540,930)}17
+Dialogue: 7,0:00:34.40,0:00:34.43,Big,,0,0,0,,{\pos(540,930)}22
+Dialogue: 7,0:00:34.43,0:00:34.47,Big,,0,0,0,,{\pos(540,930)}27
+Dialogue: 7,0:00:34.47,0:00:34.50,Big,,0,0,0,,{\pos(540,930)}32
+Dialogue: 7,0:00:34.50,0:00:34.53,Big,,0,0,0,,{\pos(540,930)}36
+Dialogue: 7,0:00:34.53,0:00:34.57,Big,,0,0,0,,{\pos(540,930)}40
+Dialogue: 7,0:00:34.57,0:00:34.60,Big,,0,0,0,,{\pos(540,930)}43
+Dialogue: 7,0:00:34.60,0:00:34.63,Big,,0,0,0,,{\pos(540,930)}47
+Dialogue: 7,0:00:34.63,0:00:34.67,Big,,0,0,0,,{\pos(540,930)}50
+Dialogue: 7,0:00:34.67,0:00:34.70,Big,,0,0,0,,{\pos(540,930)}53
+Dialogue: 7,0:00:34.70,0:00:34.73,Big,,0,0,0,,{\pos(540,930)}55
+Dialogue: 7,0:00:34.73,0:00:34.77,Big,,0,0,0,,{\pos(540,930)}58
+Dialogue: 7,0:00:34.77,0:00:34.80,Big,,0,0,0,,{\pos(540,930)}60
+Dialogue: 7,0:00:34.80,0:00:34.83,Big,,0,0,0,,{\pos(540,930)}62
+Dialogue: 7,0:00:34.83,0:00:34.87,Big,,0,0,0,,{\pos(540,930)}64
+Dialogue: 7,0:00:34.87,0:00:34.90,Big,,0,0,0,,{\pos(540,930)}66
+Dialogue: 7,0:00:34.90,0:00:34.93,Big,,0,0,0,,{\pos(540,930)}67
+Dialogue: 7,0:00:34.93,0:00:34.97,Big,,0,0,0,,{\pos(540,930)}68
+Dialogue: 7,0:00:34.97,0:00:35.00,Big,,0,0,0,,{\pos(540,930)}70
+Dialogue: 7,0:00:35.00,0:00:35.03,Big,,0,0,0,,{\pos(540,930)}71
+Dialogue: 7,0:00:35.03,0:00:35.07,Big,,0,0,0,,{\pos(540,930)}71
+Dialogue: 7,0:00:35.07,0:00:35.10,Big,,0,0,0,,{\pos(540,930)}72
+Dialogue: 7,0:00:35.10,0:00:35.13,Big,,0,0,0,,{\pos(540,930)}73
+Dialogue: 7,0:00:35.13,0:00:35.17,Big,,0,0,0,,{\pos(540,930)}73
+Dialogue: 7,0:00:35.17,0:00:35.20,Big,,0,0,0,,{\pos(540,930)}74
+Dialogue: 7,0:00:35.20,0:00:35.23,Big,,0,0,0,,{\pos(540,930)}74
+Dialogue: 7,0:00:35.23,0:00:35.27,Big,,0,0,0,,{\pos(540,930)}74
+Dialogue: 7,0:00:35.27,0:00:35.30,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.30,0:00:35.33,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.33,0:00:35.37,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.37,0:00:35.40,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.40,0:00:35.43,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.43,0:00:35.47,Big,,0,0,0,,{\pos(540,930)}75
+Dialogue: 7,0:00:35.47,0:00:38.80,Big,,0,0,0,,{\pos(540,930)\fscx115\fscy115\t(0,200,\fscx100\fscy100)}75
+Dialogue: 7,0:00:34.30,0:00:38.80,BigLbl,,0,0,0,,{\pos(540,780)\fad(200,0)}‏דירה של כמעט‏
+Dialogue: 7,0:00:34.90,0:00:38.80,BigLbl,,0,0,0,,{\pos(540,1080)\fad(200,0)}‏מ"ר‏
+Dialogue: 11,0:00:22.60,0:00:22.80,Shape,,0,0,0,,{\an7\pos(0,0)\1c&HFFFFFF&\1a&H30&\fad(0,170)\p1}m 0 0 l 1080 0 l 1080 1920 l 0 1920{\p0}
+Dialogue: 11,0:00:24.90,0:00:25.10,Shape,,0,0,0,,{\an7\pos(0,0)\1c&HFFFFFF&\1a&H30&\fad(0,170)\p1}m 0 0 l 1080 0 l 1080 1920 l 0 1920{\p0}
+Dialogue: 5,0:00:00.00,0:00:01.56,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭םכל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תוארהל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הצור‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭ינא‬
+Dialogue: 5,0:00:01.56,0:00:03.29,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭הריד‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭,ץופיש‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭ינפל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הריד‬
+Dialogue: 5,0:00:03.29,0:00:04.60,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭זירב‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭דרל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭המיאתמש‬
+Dialogue: 5,0:00:04.60,0:00:05.66,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭המל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭םכל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭ריבסא‬
+Dialogue: 5,0:00:05.66,0:00:07.20,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תאזה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תיפיצפסה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הרידה‬
+Dialogue: 5,0:00:07.40,0:00:10.52,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭תצפושמ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תויהל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הרחבנ‬
+Dialogue: 5,0:00:10.52,0:00:12.60,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭זירב‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭דר‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭רובע‬
+Dialogue: 5,0:00:13.60,0:00:15.29,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תא‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭וארת‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭לכ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭םדוק‬
+Dialogue: 5,0:00:15.29,0:00:17.66,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תאו‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭האובמה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תא‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭,הסינכה‬
+Dialogue: 5,0:00:17.66,0:00:18.90,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תוגרדמה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭רדח‬
+Dialogue: 5,0:00:18.90,0:00:22.60,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תוגרדמ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭םרג‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭םג‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭שי‬
+Dialogue: 5,0:00:22.60,0:00:24.90,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭תילעמה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭וזו‬
+Dialogue: 5,0:00:24.90,0:00:25.81,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭בוט‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭בצמב‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭תילעמה‬
+Dialogue: 5,0:00:25.81,0:00:26.90,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭הבוט‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭המרב‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תקזחותמו‬
+Dialogue: 5,0:00:26.90,0:00:27.90,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭ןיינבה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭לכה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭ךס‬
+Dialogue: 5,0:00:27.90,0:00:29.14,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭,הפי‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭דואמ‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭קזחותמ‬
+Dialogue: 5,0:00:29.14,0:00:30.30,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&H0000D7FF&}‭הפי‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭דואמ‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭הסינכה‬
+Dialogue: 5,0:00:30.60,0:00:32.41,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭תוארל‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭סנכינ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭ואוב‬
+Dialogue: 5,0:00:32.41,0:00:34.10,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭םינפבמ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הרידה‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭תא‬
+Dialogue: 5,0:00:34.30,0:00:36.89,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭טעמכ‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭לש‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭הרידב‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭רבודמ‬
+Dialogue: 5,0:00:36.89,0:00:38.80,Sub,,0,0,0,,{\q2\fscx80\fscy80\t(0,110,\fscx104\fscy104)\t(110,170,\fscx100\fscy100)}{\c&HFFFFFF&}‭רטמ‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭75‬{\c&HFFFFFF&}‭ ‬{\c&HFFFFFF&}‭,רטמ‬{\c&HFFFFFF&}‭ ‬{\c&H0000D7FF&}‭80‬
+Dialogue: 12,0:00:38.95,0:00:42.80,CTA1,,0,0,0,,{\move(540,780,540,700,0,300)\fad(250,0)}‏רוצים לראות איך דירה כזו‏\N‏הופכת להשקעה מניבה?‏
+Dialogue: 12,0:00:39.40,0:00:42.80,CTA2,,0,0,0,,{\pos(540,1000)\fscx30\fscy30\t(0,200,\fscx110\fscy110)\t(200,320,\fscx100\fscy100)\t(800,1150,\fscx108\fscy108)\t(1150,1500,\fscx100\fscy100)\t(1500,1850,\fscx108\fscy108)\t(1850,2200,\fscx100\fscy100)\t(2200,2550,\fscx108\fscy108)\t(2550,2900,\fscx100\fscy100)\t(2900,3250,\fscx108\fscy108)\t(3250,3600,\fscx100\fscy100)\t(3600,3950,\fscx108\fscy108)\t(3950,4300,\fscx100\fscy100)}‏הירשמו לוובינר‏
+Dialogue: 12,0:00:39.80,0:00:42.80,CTA1,,0,0,0,,{\pos(540,1210)\fad(250,0)}‏הקישור בביו‏
+Dialogue: 12,0:00:40.00,0:00:40.50,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
+Dialogue: 12,0:00:40.50,0:00:41.00,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
+Dialogue: 12,0:00:41.00,0:00:41.50,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
+Dialogue: 12,0:00:41.50,0:00:42.00,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
+Dialogue: 12,0:00:42.00,0:00:42.50,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
+Dialogue: 12,0:00:42.50,0:00:42.80,Shape,,0,0,0,,{\an5\move(540,1300,540,1340,0,250)\t(250,500,\fscy100)\p1}m 0 0 l 64 0 l 32 38{\p0}
