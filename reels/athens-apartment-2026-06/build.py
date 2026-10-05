@@ -147,8 +147,9 @@ def render(r):
     subprocess.run(cmd, check=True)
     print(r["name"], f"{total:.1f}s", flush=True)
 
-os.makedirs("out", exist_ok=True)
-sel = sys.argv[1:] or [r["name"] for r in REELS]
-for r in REELS:
-    if r["name"] in sel:
-        render(r)
+if __name__ == "__main__":
+    os.makedirs("out", exist_ok=True)
+    sel = sys.argv[1:] or [r["name"] for r in REELS]
+    for r in REELS:
+        if r["name"] in sel:
+            render(r)
