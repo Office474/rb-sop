@@ -178,6 +178,29 @@
   .gap h3 { margin: 0 0 4px; font-size: 19px; }
   .gap p { margin: 0; color: var(--muted); }
 
+  /* Value-add options */
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+  .opt { position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .opt.pick { border: 2px solid var(--brand); box-shadow: 0 10px 30px rgba(179, 18, 46, .10); }
+  .opt .badge {
+    position: absolute; top: -13px; inset-inline-start: 20px;
+    background: var(--brand); color: #fff; font-size: 13px; font-weight: 800;
+    padding: 4px 12px; border-radius: 999px;
+  }
+  .opt .kicker { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: .03em; }
+  .opt h3 { margin: 2px 0 0; font-size: 22px; }
+  .opt .hero-num { display: flex; align-items: baseline; gap: 8px; }
+  .opt .hero-num b { font-size: clamp(38px, 6vw, 52px); font-weight: 800; line-height: 1; }
+  .opt .hero-num span { color: var(--muted); }
+  .opt dl { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 0; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .opt dl div { background: var(--surface); padding: 10px 12px; }
+  .opt dt { color: var(--muted); font-size: 13px; }
+  .opt dd { margin: 0; font-weight: 800; font-size: 18px; }
+  .opt ul { margin: 0; padding: 0; list-style: none; }
+  .opt li { padding: 6px 0; font-size: 15px; display: flex; gap: 8px; }
+  .opt li::before { content: "✓"; color: #2e9e48; font-weight: 800; }
+  .opt li.con::before { content: "!"; color: #b26b00; width: .7em; text-align: center; }
+
   /* Why now */
   .calc { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 8px 0 16px; }
   .calc > div { border-radius: 14px; padding: 18px; background: var(--bg); border: 1px solid var(--line); }
@@ -230,7 +253,8 @@
     .media-links { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
     .reels { grid-auto-columns: 62%; }
-    .offer, .tiles, .demand, .calc, .now-grid, .perks { grid-template-columns: 1fr; }
+    .offer, .tiles, .demand, .calc, .now-grid, .perks, .opts { grid-template-columns: 1fr; }
+    .opt.pick { margin-top: 10px; }
     .hero .shot { aspect-ratio: 4 / 3; }
     .hero .shot img { object-position: center 65%; }
     form { grid-template-columns: 1fr; }
@@ -427,6 +451,48 @@
         <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><h3>השקעות וסחר בינלאומי</h3><p>הון זר ממשיך להיכנס, ונמל פיראוס הוא מהגדולים בים התיכון.</p></div>
       </div>
       <div class="card gap"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></svg></span><div><h3>מה שחסר בשוק: דירות מרווחות ומעוצבות</h3><p>הרבה מהדירות במרכז אתונה ישנות ולא משופצות. דירת 75 מ״ר עם 2 חדרי שינה ו־2 חדרי רחצה, משופצת ומאובזרת, היא בדיוק המוצר שהביקוש מחפש ומעט מאוד היצע עונה עליו.</p></div></div>
+    </div>
+  </section>
+
+  <!-- VALUE-ADD OPTIONS -->
+  <section id="options">
+    <div class="wrap">
+      <h2>שתי דרכים להרוויח מהדירה</h2>
+      <p class="sub">בוחרים מסלול השבחה לפי המטרה שלכם: הכנסה יציבה או תשואה גבוהה.</p>
+      <div class="opts">
+        <div class="card opt">
+          <div><div class="kicker">מסלול א׳</div><h3>השכרה לטווח ארוך</h3></div>
+          <div class="hero-num"><b class="ltr">€600</b><span>לחודש, עד</span></div>
+          <dl>
+            <div><dt>השקעה בשדרוג</dt><dd class="ltr">€15,000</dd></div>
+            <div><dt>הכנסה שנתית, עד</dt><dd class="ltr">€7,200</dd></div>
+            <div><dt>סך ההשקעה</dt><dd class="ltr">€140,000</dd></div>
+            <div><dt>תשואה ברוטו, עד</dt><dd class="ltr">5.1%</dd></div>
+          </dl>
+          <ul>
+            <li>הכנסה קבועה מדי חודש</li>
+            <li>שוכר אחד, מעט ניהול שוטף</li>
+            <li class="con">השקעה ראשונית גבוהה יותר</li>
+          </ul>
+        </div>
+        <div class="card opt pick">
+          <span class="badge">תשואה גבוהה יותר</span>
+          <div><div class="kicker">מסלול ב׳</div><h3>Airbnb, השכרה לטווח קצר</h3></div>
+          <div class="hero-num"><b class="ltr">€1,200</b><span>לחודש, עד</span></div>
+          <dl>
+            <div><dt>השקעה בהכנה</dt><dd class="ltr">€800</dd></div>
+            <div><dt>הכנסה שנתית, עד</dt><dd class="ltr">€14,400</dd></div>
+            <div><dt>סך ההשקעה</dt><dd class="ltr">€125,800</dd></div>
+            <div><dt>תשואה ברוטו, עד</dt><dd class="ltr">11.4%</dd></div>
+          </dl>
+          <ul>
+            <li>פי 2 הכנסה, בהשקעה נמוכה ב־<span class="ltr">€14,200</span></li>
+            <li>לדירה כבר יש רישום להשכרה קצרה</li>
+            <li class="con">הכנסה עונתית, ודורשת ניהול שוטף</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine" style="margin-top:14px">הסכומים הם הערכה ואינם התחייבות. התשואה מחושבת על מחיר הדירה ועל ההשקעה בהשבחה, ללא עלויות רכישה (מס העברה, נוטריון ועו״ד), מיסים והוצאות שוטפות.</p>
     </div>
   </section>
 
