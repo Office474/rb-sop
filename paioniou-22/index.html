@@ -7,7 +7,7 @@
 <meta name="description" content="דירת 73 מ״ר בקומה 2, Paioniou 22, אתונה. 2 חדרי שינה, 2 חדרי רחצה ו־2 מרפסות. €125,000.">
 <meta property="og:title" content="Paioniou 22 · 73 מ״ר באתונה · €125,000">
 <meta property="og:description" content="2 חדרי שינה · 2 חדרי רחצה · 2 מרפסות · תוכנית אדריכל">
-<meta property="og:image" content="assets/before.jpg">
+<meta property="og:image" content="assets/facade.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -76,7 +76,15 @@
     background: rgba(29, 26, 27, .78); color: #fff; font-size: 13px; font-weight: 700;
     padding: 4px 10px; border-radius: 999px;
   }
-  .hero .shot { aspect-ratio: 16 / 10; }
+  .hero .shot { aspect-ratio: 4 / 5; max-height: 640px; }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 32px; }
+  .gallery a { display: block; text-decoration: none; }
+  .gallery .shot { aspect-ratio: 3 / 4; }
+  .gallery img { transition: transform .3s ease; }
+  .gallery a:hover img { transform: scale(1.03); }
+  .gallery figcaption { font-size: 15px; color: var(--muted); margin-top: 6px; }
 
   /* Stats */
   .stats {
@@ -140,6 +148,9 @@
     .stats { grid-template-columns: repeat(2, 1fr); }
     .grid-2, .hero-grid { grid-template-columns: 1fr; }
     .media-links { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero .shot { aspect-ratio: 4 / 3; }
+    .hero .shot img { object-position: center 65%; }
     form { grid-template-columns: 1fr; }
     header.top .btn { display: none; }
     .sticky-cta {
@@ -181,8 +192,8 @@
       </div>
       </div>
       <figure class="shot">
-        <img src="assets/before.jpg" alt="חדר בדירה עם פרקט ויציאה למרפסת" width="463" height="244">
-        <span class="tag">צילום מהדירה · לפני שיפוץ</span>
+        <img src="assets/facade.jpg" alt="חזית הבניין ב־Paioniou 22, רחוב עם עצים" width="1200" height="1600" fetchpriority="high">
+        <span class="tag">חזית הבניין · צילום אמיתי</span>
       </figure>
      </div>
 
@@ -225,13 +236,21 @@
   <!-- VIDEO + MEDIA -->
   <section id="media">
     <div class="wrap">
-      <h2>לראות את הדירה</h2>
-      <p class="sub">סרטון, אלבום תמונות ותשריטים.</p>
+      <h2>הדירה היום</h2>
+      <p class="sub">צילומים אמיתיים מהדירה במצבה הנוכחי, לפני שיפוץ. מה שרואים זה מה שקונים.</p>
+      <div class="gallery">
+        <a href="assets/room-1.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/room-1.jpg" alt="חדר עם יציאה למרפסת" loading="lazy" width="900" height="1200"></div><figcaption>חדר עם יציאה למרפסת</figcaption></figure></a>
+        <a href="assets/room-2.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/room-2.jpg" alt="חדר שני, גם הוא עם מרפסת" loading="lazy" width="900" height="1200"></div><figcaption>חדר שני, גם הוא עם מרפסת</figcaption></figure></a>
+        <a href="assets/kitchen.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/kitchen.jpg" alt="מטבח" loading="lazy" width="900" height="1200"></div><figcaption>מטבח</figcaption></figure></a>
+        <a href="assets/bathroom.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/bathroom.jpg" alt="חדר רחצה" loading="lazy" width="900" height="1200"></div><figcaption>חדר רחצה</figcaption></figure></a>
+        <a href="assets/balcony.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/balcony.jpg" alt="מרפסת אחורית" loading="lazy" width="900" height="1200"></div><figcaption>מרפסת אחורית</figcaption></figure></a>
+        <a href="assets/entrance.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/entrance.jpg" alt="כניסה לבניין" loading="lazy" width="900" height="1200"></div><figcaption>כניסה לבניין</figcaption></figure></a>
+      </div>
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/hdw3inwasYI" title="Paioniou 22 video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="media-links">
-        <a href="https://photos.app.goo.gl/iysSSadd2EXBJkdf9" target="_blank" rel="noopener">תמונות<small>אלבום הנכס</small></a>
+        <a href="https://photos.app.goo.gl/iysSSadd2EXBJkdf9" target="_blank" rel="noopener">כל התמונות<small>24 צילומים מהנכס</small></a>
         <a href="https://photos.app.goo.gl/2tbshpCxpAxZsmbB8" target="_blank" rel="noopener">סיור וידאו<small>צולם בנכס</small></a>
         <a href="https://drive.google.com/file/d/14y5KE26qsa3Q8Ui7Ax7K5JNxLMyZLvT-/view?usp=sharing" target="_blank" rel="noopener">תשריט<small>באיכות מלאה</small></a>
       </div>
