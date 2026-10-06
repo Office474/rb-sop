@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paioniou 22 | Red Berries</title>
+<meta name="description" content="דירת 73 מ״ר משופצת בקומה 2, Paioniou 22, אתונה. 2 חדרי שינה, 2 חדרי רחצה, 2 מרפסות ומעלית. €125,000.">
+<meta property="og:title" content="Paioniou 22 · 73 מ״ר באתונה · €125,000">
+<meta property="og:description" content="2 חדרי שינה · 2 חדרי רחצה · 2 מרפסות · מעלית · תכנון אחרי שיפוץ">
+<meta property="og:image" content="assets/floor-plan.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf8f6;
+    --surface: #ffffff;
+    --ink: #1d1a1b;
+    --muted: #6b6365;
+    --line: #ebe4e1;
+    --brand: #b3122e;
+    --brand-ink: #ffffff;
+    --brand-soft: #fbe9ec;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Heebo", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+  /* Header */
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251, 248, 246, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 800; letter-spacing: .02em; text-decoration: none; }
+  .logo span { color: var(--brand); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 22px; border-radius: 999px; border: 0;
+    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+    background: var(--brand); color: var(--brand-ink);
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn.sm { padding: 8px 16px; font-size: 15px; }
+
+  /* Hero */
+  .hero { padding: 56px 0 40px; }
+  .eyebrow { color: var(--brand); font-weight: 700; font-size: 15px; letter-spacing: .04em; }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; margin: 8px 0 12px; font-weight: 800; }
+  .lead { font-size: 20px; color: var(--muted); max-width: 620px; margin: 0 0 28px; }
+  .price-row { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+  .price { font-size: clamp(36px, 6vw, 48px); font-weight: 800; }
+  .ppsm { color: var(--muted); }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Stats */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    margin-top: 40px;
+  }
+  .stat { background: var(--surface); padding: 20px; }
+  .stat b { display: block; font-size: 28px; font-weight: 800; line-height: 1.2; }
+  .stat small { color: var(--muted); font-size: 15px; }
+
+  section { padding: 48px 0; }
+  h2 { font-size: clamp(26px, 4vw, 34px); margin: 0 0 8px; font-weight: 800; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+
+  /* Feature list */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  ul.specs { list-style: none; margin: 0; padding: 0; }
+  ul.specs li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  ul.specs li:last-child { border-bottom: 0; }
+  ul.specs span { color: var(--muted); }
+  ul.specs strong { text-align: left; }
+
+  .floor img { width: 100%; height: auto; display: block; border-radius: 10px; background: #fff; }
+  .floor figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
+
+  /* Benefits */
+  .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .benefit { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .benefit .ic {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--brand-soft); color: var(--brand);
+    display: grid; place-items: center; font-weight: 800; margin-bottom: 12px;
+  }
+  .benefit h3 { margin: 0 0 6px; font-size: 19px; }
+  .benefit p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* Video */
+  .video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* Media links */
+  .media-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+  .media-links a {
+    display: block; text-decoration: none; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 12px; padding: 16px; font-weight: 700;
+  }
+  .media-links a small { display: block; color: var(--muted); font-weight: 400; font-size: 14px; }
+  .media-links a:hover { border-color: var(--brand); }
+
+  /* Trust */
+  .trust { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .pill { background: var(--brand-soft); color: var(--brand); padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 15px; }
+
+  /* Lead form */
+  .contact { background: var(--ink); color: #fff; border-radius: 24px; padding: 40px 28px; }
+  .contact h2 { color: #fff; }
+  .contact .sub { color: #cfc7c9; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  form .full { grid-column: 1 / -1; }
+  label { display: block; font-size: 14px; color: #cfc7c9; margin-bottom: 4px; }
+  input, select {
+    width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #3a3436;
+    background: #2a2527; color: #fff; font: inherit;
+  }
+  .note { font-size: 14px; color: #a99fa2; margin-top: 10px; }
+
+  footer { padding: 32px 0 96px; color: var(--muted); font-size: 15px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* Mobile sticky CTA */
+  .sticky-cta { display: none; }
+
+  @media (max-width: 760px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .benefits { grid-template-columns: 1fr; }
+    .media-links { grid-template-columns: 1fr 1fr; }
+    form { grid-template-columns: 1fr; }
+    header.top .btn { display: none; }
+    .sticky-cta {
+      display: flex; position: fixed; inset: auto 0 0 0; z-index: 20; gap: 8px;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: var(--surface); border-top: 1px solid var(--line);
+    }
+    .sticky-cta .btn { flex: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://www.red-berries.com" target="_blank" rel="noopener">RED <span>BERRIES</span></a>
+    <a class="btn sm" href="#contact">לתיאום שיחה</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">אתונה · Attiki · <span class="ltr">Paioniou 22</span></div>
+      <h1>73 מ״ר, 2 חדרי שינה,<br>2 מרפסות, במרכז אתונה.</h1>
+      <p class="lead">דירה בקומה שנייה בבניין עם מעלית, ברחוב חד־סטרי שקט במרכז אתונה. התכנון אחרי השיפוץ נבנה כדי להוציא מהדירה את מלוא הפוטנציאל העסקי.</p>
+
+      <div class="price-row">
+        <div class="price"><span class="ltr">€125,000</span></div>
+        <div class="ppsm"><span class="ltr">€1,712</span> למ״ר</div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="#contact">אני רוצה פרטים</a>
+        <a class="btn ghost" href="#plan">לתוכנית הדירה</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>73 מ״ר</b><small>+ מרפסות</small></div>
+        <div class="stat"><b>2 + 2</b><small>חדרי שינה · חדרי רחצה</small></div>
+        <div class="stat"><b>קומה 2</b><small>מתוך 5, עם מעלית</small></div>
+        <div class="stat"><b>צפון · דרום</b><small>2 כיווני אוויר</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN -->
+  <section id="plan">
+    <div class="wrap">
+      <h2>התוכנית אחרי השיפוץ</h2>
+      <p class="sub">שני חדרי שינה, שני חדרי רחצה, סלון ומטבח פתוחים, מרפסת גדולה ומרפסת קטנה.</p>
+      <div class="grid-2">
+        <figure class="card floor" style="margin:0">
+          <img src="assets/floor-plan.png" alt="תוכנית דירה Paioniou 22: חדר שינה 1, חדר שינה 2, 2 מקלחות, סלון, מרפסת גדולה ומרפסת קטנה" loading="lazy" width="1620" height="1080">
+          <figcaption>תשריט אדריכל · <a href="https://drive.google.com/file/d/1KoO1lnThihK-qpgZJZwOiAJgwRAVkBNU/view?usp=sharing" target="_blank" rel="noopener">לתשריט המקור (PDF)</a></figcaption>
+        </figure>
+        <div class="card">
+          <ul class="specs">
+            <li><span>כתובת</span><strong class="ltr">Paioniou 22, Athens</strong></li>
+            <li><span>אזור</span><strong>Attiki</strong></li>
+            <li><span>שטח</span><strong>73 מ״ר + מרפסות</strong></li>
+            <li><span>קומה</span><strong>2 מתוך 5</strong></li>
+            <li><span>חלוקה</span><strong>2 חד׳ שינה · 2 חד׳ רחצה · סלון ומטבח</strong></li>
+            <li><span>מרפסות</span><strong>2</strong></li>
+            <li><span>מעלית</span><strong>יש</strong></li>
+            <li><span>כיווני אוויר</span><strong>צפון (חזית) ודרום</strong></li>
+            <li><span>רחוב</span><strong>חד־סטרי</strong></li>
+            <li><span>בבניין</span><strong>3 דירות בקומה · 27 דיירים</strong></li>
+            <li><span>מחיר</span><strong class="ltr">€125,000</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO + MEDIA -->
+  <section id="media">
+    <div class="wrap">
+      <h2>לראות את הדירה</h2>
+      <p class="sub">סרטון, תמונות ומצגת הנכס המלאה.</p>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/hdw3inwasYI" title="Paioniou 22 video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="media-links">
+        <a href="https://photos.app.goo.gl/iysSSadd2EXBJkdf9" target="_blank" rel="noopener">תמונות<small>אלבום הנכס</small></a>
+        <a href="https://photos.app.goo.gl/2tbshpCxpAxZsmbB8" target="_blank" rel="noopener">סיור וידאו<small>צולם בנכס</small></a>
+        <a href="https://canva.link/2c5ylavzgj23nc9" target="_blank" rel="noopener">מצגת הנכס<small>9 עמודים</small></a>
+        <a href="https://drive.google.com/file/d/14y5KE26qsa3Q8Ui7Ax7K5JNxLMyZLvT-/view?usp=sharing" target="_blank" rel="noopener">תשריט<small>באיכות מלאה</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RENOVATED -->
+  <section id="why">
+    <div class="wrap">
+      <h2>למה דירה משופצת</h2>
+      <p class="sub">אחרי שנים של ניהול נכסים באתונה, זה מה שראינו שעובד.</p>
+      <div class="benefits">
+        <div class="benefit"><div class="ic">1</div><h3>שוכרים איכותיים</h3><p>סטנדרט אחיד מושך שוכרים שמוכנים לשלם יותר.</p></div>
+        <div class="benefit"><div class="ic">2</div><h3>פחות הפתעות</h3><p>אחריות על תשתיות, פחות הוצאות תחזוקה.</p></div>
+        <div class="benefit"><div class="ic">3</div><h3>קל למכור ברווח</h3><p>השבחת הנכס מעלה את שוויו ומחזירה את ההשקעה.</p></div>
+        <div class="benefit"><div class="ic">4</div><h3>בלי עלויות נסתרות</h3><p>אין עלויות נוספות כמו שיפוץ גג ושטחים משותפים.</p></div>
+        <div class="benefit"><div class="ic">5</div><h3>תכנון עסקי</h3><p>חלוקה ל־2 חדרי שינה עם חדר רחצה לכל אחד.</p></div>
+        <div class="benefit"><div class="ic">6</div><h3>ליווי מלא</h3><p>משרד באתונה ומשרד בישראל, מהקנייה ועד הניהול.</p></div>
+      </div>
+      <div class="trust">
+        <span class="pill">אישור מהנדס</span>
+        <span class="pill">חברת ניהול</span>
+        <span class="pill">ביטוח מבנה</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2>רוצים לשמוע עוד על Paioniou 22?</h2>
+        <p class="sub">השאירו פרטים ונחזור אליכם עם התוכנית העסקית המלאה של הנכס.</p>
+        <form id="lead">
+          <div><label for="name">שם מלא</label><input id="name" name="name" required autocomplete="name"></div>
+          <div><label for="phone">טלפון</label><input id="phone" name="phone" type="tel" required autocomplete="tel" dir="ltr"></div>
+          <div class="full"><label for="goal">מה מעניין אתכם?</label>
+            <select id="goal" name="goal">
+              <option>השכרה לטווח קצר</option>
+              <option>השכרה לטווח ארוך</option>
+              <option>השבחה ומכירה</option>
+              <option>עדיין בודק/ת</option>
+            </select>
+          </div>
+          <div class="full"><button class="btn" type="submit" style="width:100%">שלחו לי את הפרטים</button></div>
+        </form>
+        <p class="note" id="lead-note"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Red Berries</strong> · <a href="https://www.red-berries.com" target="_blank" rel="noopener">red-berries.com</a></div>
+    <div>משרד אתונה: <span class="ltr">Gamveta 4, Athens</span> · משרד ישראל: תובל 40, רמת גן</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn" href="#contact">אני רוצה פרטים</a>
+</div>
+
+<script>
+  // Lead destination: set the WhatsApp number (international format, digits only, e.g. "9725XXXXXXXX").
+  // Leave empty to fall back to email.
+  const CONFIG = {
+    whatsapp: "",
+    email: "",
+    property: "Paioniou 22"
+  };
+
+  document.getElementById("lead").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const f = new FormData(this);
+    const msg = `היי, אני מתעניין/ת בנכס ${CONFIG.property}.\nשם: ${f.get("name")}\nטלפון: ${f.get("phone")}\nמטרה: ${f.get("goal")}`;
+    const note = document.getElementById("lead-note");
+    if (CONFIG.whatsapp) {
+      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
+      note.textContent = "פותח WhatsApp…";
+    } else if (CONFIG.email) {
+      location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("ליד: " + CONFIG.property)}&body=${encodeURIComponent(msg)}`;
+    } else {
+      note.textContent = "יעד הלידים עוד לא הוגדר (CONFIG בקוד).";
+    }
+  });
+</script>
+</body>
+</html>
