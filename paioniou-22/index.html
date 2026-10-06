@@ -112,6 +112,16 @@
   .floor img { width: 100%; height: auto; display: block; border-radius: 10px; background: #fff; }
   .floor figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
 
+  /* Reels */
+  .reels {
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr);
+    gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding-bottom: 8px; margin-bottom: 8px; -webkit-overflow-scrolling: touch;
+  }
+  .reel { margin: 0; scroll-snap-align: start; }
+  .reel video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; background: #000; object-fit: cover; }
+  .reel figcaption { font-weight: 700; font-size: 15px; margin-top: 8px; }
+
   /* Video */
   .video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -149,6 +159,7 @@
     .grid-2, .hero-grid { grid-template-columns: 1fr; }
     .media-links { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .reels { grid-auto-columns: 62%; }
     .hero .shot { aspect-ratio: 4 / 3; }
     .hero .shot img { object-position: center 65%; }
     form { grid-template-columns: 1fr; }
@@ -233,6 +244,21 @@
     </div>
   </section>
 
+  <!-- REELS -->
+  <section id="tour">
+    <div class="wrap">
+      <h2>סיור בדירה עם גיא</h2>
+      <p class="sub">5 סרטונים קצרים מהביקור בדירה. כל אחד מהם פחות מדקה.</p>
+      <div class="reels">
+        <figure class="reel"><video src="assets/reels/reel1_why_this_apartment.mp4" poster="assets/reels/reel1_why_this_apartment.jpg" controls playsinline preload="none" width="720" height="1280"></video><figcaption>למה בחרנו דווקא את הדירה הזאת?</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/reel2_3m_ceilings.mp4" poster="assets/reels/reel2_3m_ceilings.jpg" controls playsinline preload="none" width="720" height="1280"></video><figcaption>תקרה של 3 מטר</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/reel3_light_and_balconies.mp4" poster="assets/reels/reel3_light_and_balconies.jpg" controls playsinline preload="none" width="720" height="1280"></video><figcaption>סלון מואר + שתי מרפסות</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/reel4_renovation_plan.mp4" poster="assets/reels/reel4_renovation_plan.jpg" controls playsinline preload="none" width="720" height="1280"></video><figcaption>מה משנים בשיפוץ</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/reel5_balcony_long_stay.mp4" poster="assets/reels/reel5_balcony_long_stay.jpg" controls playsinline preload="none" width="720" height="1280"></video><figcaption>המרפסת שגורמת לדיירים להישאר</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
   <!-- VIDEO + MEDIA -->
   <section id="media">
     <div class="wrap">
@@ -296,7 +322,7 @@
   // Lead destination: set the WhatsApp number (international format, digits only, e.g. "9725XXXXXXXX").
   // Leave empty to fall back to email.
   const CONFIG = {
-    whatsapp: "",
+    whatsapp: "972547430134",
     email: "",
     property: "Paioniou 22"
   };
