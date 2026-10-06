@@ -135,6 +135,76 @@
   .media-links a small { display: block; color: var(--muted); font-weight: 400; font-size: 14px; }
   .media-links a:hover { border-color: var(--brand); }
 
+  /* Shared section bits */
+  section.alt { background: var(--surface); border-block: 1px solid var(--line); }
+  .ico {
+    width: 44px; height: 44px; flex: none; border-radius: 12px;
+    background: var(--brand-soft); color: var(--brand); display: grid; place-items: center;
+  }
+  .ico svg { width: 24px; height: 24px; }
+  .fine { color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .tag.static { position: static; display: inline-block; margin-bottom: 12px; }
+
+  /* Offer strip */
+  .offer {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 16px;
+    background: #3a3436; border-radius: var(--radius); overflow: hidden;
+  }
+  .offer > div { background: var(--ink); color: #fff; padding: 18px 20px; display: flex; gap: 14px; align-items: center; }
+  .offer .ico { background: rgba(255,255,255,.1); color: #ffd166; }
+  .offer b { display: block; font-size: 18px; line-height: 1.3; }
+  .offer small { color: #cfc7c9; font-size: 14px; }
+  .offer a { color: #ffd166; font-weight: 700; }
+
+  /* Location */
+  .metro { padding: 24px 20px 16px; }
+  .metro svg { width: 100%; height: auto; display: block; }
+  .near { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .near li { display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .near b { display: block; }
+  .near small { color: var(--muted); font-size: 15px; }
+
+  /* Why Athens */
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+  .tile { background: var(--ink); color: #fff; border-radius: var(--radius); padding: 24px; }
+  .tile b { display: block; font-size: clamp(34px, 5vw, 48px); font-weight: 800; line-height: 1.1; color: #ffd166; }
+  .tile span { display: block; margin-top: 6px; }
+  .tile small { color: #cfc7c9; font-size: 14px; }
+  .demand { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .demand .card { padding: 20px; }
+  .demand h3 { margin: 12px 0 4px; font-size: 18px; }
+  .demand p { margin: 0; color: var(--muted); font-size: 15px; }
+  .gap { margin-top: 16px; display: flex; gap: 16px; align-items: flex-start; border-inline-start: 4px solid var(--brand); }
+  .gap h3 { margin: 0 0 4px; font-size: 19px; }
+  .gap p { margin: 0; color: var(--muted); }
+
+  /* Why now */
+  .calc { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 8px 0 16px; }
+  .calc > div { border-radius: 14px; padding: 18px; background: var(--bg); border: 1px solid var(--line); }
+  .calc small { color: var(--muted); display: block; font-size: 14px; }
+  .calc b { display: block; font-size: 28px; font-weight: 800; }
+  .calc .hit { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .calc .hit small { color: #ffd9df; }
+  .now-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: start; }
+  .steps { margin: 0; padding-inline-start: 20px; }
+  .steps li { margin-bottom: 8px; }
+
+  /* Perks */
+  .perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .perk h3 { margin: 12px 0 6px; font-size: 20px; }
+  .perk p { margin: 0; color: var(--muted); }
+  .perk.gift { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .perk.gift .ico { background: rgba(255,255,255,.15); color: #fff; }
+  .perk.gift p { color: #ffe4e8; }
+  .perk .big { font-size: 40px; font-weight: 800; line-height: 1; margin-top: 12px; display: block; }
+  .checks { list-style: none; margin: 0; padding: 0; }
+  .checks li { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  .checks li:last-child { border-bottom: 0; }
+  .checks strong { color: var(--ink); }
+
+  .sources { font-size: 13px; color: var(--muted); margin: 8px 0 0; padding-inline-start: 18px; }
+  .sources a { color: var(--muted); }
+
   /* Lead form */
   .contact { background: var(--ink); color: #fff; border-radius: 24px; padding: 40px 28px; }
   .contact h2 { color: #fff; }
@@ -160,6 +230,7 @@
     .media-links { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
     .reels { grid-auto-columns: 62%; }
+    .offer, .tiles, .demand, .calc, .now-grid, .perks { grid-template-columns: 1fr; }
     .hero .shot { aspect-ratio: 4 / 3; }
     .hero .shot img { object-position: center 65%; }
     form { grid-template-columns: 1fr; }
@@ -214,6 +285,12 @@
         <div class="stat"><b>קומה 2</b><small>Attiki, אתונה</small></div>
         <div class="stat"><b><span class="ltr">€1,712</span></b><small>למ״ר</small></div>
       </div>
+
+      <div class="offer">
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1zm0 0c2-4 6-4 6-1s-6 1-6 1z"/></svg></span><div><b><span class="ltr">€10,000</span> מתנה</b><small>לציוד ואבזור הדירה</small></div></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>מס הרכישה צפוי לעלות פי 5</b><small>מ־3% ל־15% לרוכשים מחוץ לאיחוד · <a href="#now">פרטים</a></small></div></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></span><div><b>רישום להשכרה קצרה</b><small>מתאימה ל־Airbnb</small></div></div>
+      </div>
     </div>
   </div>
 
@@ -241,6 +318,19 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- RENDERING -->
+  <section id="render" class="alt">
+    <div class="wrap">
+      <span class="tag static">הדמיה</span>
+      <h2>כך הדירה תיראה אחרי השיפוץ</h2>
+      <p class="sub">הדמיית וידאו של התכנון: 2 חדרי שינה, 2 חדרי רחצה, סלון ומטבח פתוחים ויציאה למרפסת.</p>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/hdw3inwasYI" title="הדמיית השיפוץ Paioniou 22" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="fine" style="margin-top:10px">הדמיה להמחשה בלבד. המפרט הסופי ייקבע בתוכנית השיפוץ.</p>
     </div>
   </section>
 
@@ -272,9 +362,6 @@
         <a href="assets/balcony.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/balcony.jpg" alt="מרפסת אחורית" loading="lazy" width="900" height="1200"></div><figcaption>מרפסת אחורית</figcaption></figure></a>
         <a href="assets/entrance.jpg" target="_blank" rel="noopener"><figure style="margin:0"><div class="shot"><img src="assets/entrance.jpg" alt="כניסה לבניין" loading="lazy" width="900" height="1200"></div><figcaption>כניסה לבניין</figcaption></figure></a>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube-nocookie.com/embed/hdw3inwasYI" title="Paioniou 22 video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
       <div class="media-links">
         <a href="https://photos.app.goo.gl/iysSSadd2EXBJkdf9" target="_blank" rel="noopener">כל התמונות<small>24 צילומים מהנכס</small></a>
         <a href="https://photos.app.goo.gl/2tbshpCxpAxZsmbB8" target="_blank" rel="noopener">סיור וידאו<small>צולם בנכס</small></a>
@@ -283,12 +370,116 @@
     </div>
   </section>
 
+  <!-- LOCATION -->
+  <section id="area">
+    <div class="wrap">
+      <h2>מה יש באזור</h2>
+      <p class="sub">שכונת Attiki, בקו המטרו הירוק. ליד האוניברסיטה, ובמרחק נסיעה קצרה מהמרכז התיירותי.</p>
+      <div class="grid-2">
+        <div class="card metro">
+          <svg viewBox="0 0 640 160" role="img" aria-label="קו 1 של המטרו: Attiki, Victoria, Omonia, Monastiraki">
+          <line x1="40" y1="70" x2="600" y2="70" stroke="#2e9e48" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="555" cy="70" r="16" fill="#fff" stroke="#b3122e" stroke-width="6"/>
+          <text x="555" y="34" text-anchor="middle" font-family="Heebo, sans-serif" font-size="24" font-weight="800" fill="#1d1a1b">Attiki</text>
+          <text x="555" y="114" text-anchor="middle" font-family="Heebo, sans-serif" font-size="22" fill="#6b6365">הדירה</text>
+          <circle cx="405" cy="70" r="11" fill="#fff" stroke="#2e9e48" stroke-width="6"/>
+          <text x="405" y="34" text-anchor="middle" font-family="Heebo, sans-serif" font-size="24" font-weight="800" fill="#1d1a1b">Victoria</text>
+          <text x="405" y="114" text-anchor="middle" font-family="Heebo, sans-serif" font-size="22" fill="#6b6365">AUEB</text>
+          <text x="405" y="146" text-anchor="middle" font-family="Heebo, sans-serif" font-size="20" font-weight="700" fill="#2e9e48">1 תחנה</text>
+          <circle cx="255" cy="70" r="11" fill="#fff" stroke="#2e9e48" stroke-width="6"/>
+          <text x="255" y="34" text-anchor="middle" font-family="Heebo, sans-serif" font-size="24" font-weight="800" fill="#1d1a1b">Omonia</text>
+          <text x="255" y="114" text-anchor="middle" font-family="Heebo, sans-serif" font-size="22" fill="#6b6365">מרכז העיר</text>
+          <text x="255" y="146" text-anchor="middle" font-family="Heebo, sans-serif" font-size="20" font-weight="700" fill="#2e9e48">2 תחנות</text>
+          <circle cx="105" cy="70" r="11" fill="#fff" stroke="#2e9e48" stroke-width="6"/>
+          <text x="105" y="34" text-anchor="middle" font-family="Heebo, sans-serif" font-size="24" font-weight="800" fill="#1d1a1b">Monastiraki</text>
+          <text x="105" y="114" text-anchor="middle" font-family="Heebo, sans-serif" font-size="22" fill="#6b6365">אקרופוליס</text>
+          <text x="105" y="146" text-anchor="middle" font-family="Heebo, sans-serif" font-size="20" font-weight="700" fill="#2e9e48">3 תחנות</text>
+          </svg>
+          <p class="fine" style="margin:8px 0 0">קו 1 (הירוק). תחנת Attiki היא גם תחנת מעבר לקו 2 (האדום).</p>
+        </div>
+        <ul class="near">
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 21l-2-4M15 21l2-4"/><circle cx="9" cy="14" r=".5"/><circle cx="15" cy="14" r=".5"/></svg></span><div><b>תחנת מטרו Attiki</b><small>דקות הליכה מהבניין · קווים 1 ו־2</small></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span><div><b>האוניברסיטה לכלכלה ועסקים של אתונה (AUEB)</b><small>תחנה אחת, ליד תחנת Victoria</small></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l5-3v16M10 21V10h9v11M13 13h3M13 16h3"/></svg></span><div><b>מרכז העיר (אומוניה)</b><small>2 תחנות</small></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5zM4 21h16M6 9v12M10 9v12M14 9v12M18 9v12"/></svg></span><div><b>מונסטירקי, פלאקה והאקרופוליס</b><small>3 תחנות, הלב התיירותי של אתונה</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ATHENS -->
+  <section id="athens" class="alt">
+    <div class="wrap">
+      <h2>למה אתונה</h2>
+      <p class="sub">העיר נמצאת בתנופה: יותר מבקרים, יותר סטודנטים ויותר עסקים בינלאומיים מאי פעם.</p>
+      <div class="tiles">
+        <div class="tile"><b>34 מיליון</b><span>נוסעים עברו בנמל התעופה של אתונה ב־2025</span><small>שיא כל הזמנים, 6.7%+ לעומת 2024</small></div>
+        <div class="tile"><b><span class="ltr">+8.6%</span></b><span>צמיחה בתנועת הנוסעים הבינלאומיים ב־2025</span><small>24.4 מיליון נוסעים בינלאומיים</small></div>
+      </div>
+      <div class="demand">
+        <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16l20-7-4 11-5-4-4 3v-5z"/></svg></span><h3>תיירים</h3><p>זרם מבקרים שגדל משנה לשנה.</p></div>
+        <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span><h3>סטודנטים</h3><p>אוניברסיטאות במרחק תחנות ספורות, כולל AUEB.</p></div>
+        <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></svg></span><h3>קהילה עסקית ושגרירויות</h3><p>אנשי מקצוע, דיפלומטים ונוודים דיגיטליים לשהיות ארוכות.</p></div>
+        <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><h3>השקעות וסחר בינלאומי</h3><p>הון זר ממשיך להיכנס, ונמל פיראוס הוא מהגדולים בים התיכון.</p></div>
+      </div>
+      <div class="card gap"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></svg></span><div><h3>מה שחסר בשוק: דירות מרווחות ומעוצבות</h3><p>הרבה מהדירות במרכז אתונה ישנות ולא משופצות. דירת 73 מ״ר עם 2 חדרי שינה ו־2 חדרי רחצה, משופצת ומאובזרת, היא בדיוק המוצר שהביקוש מחפש ומעט מאוד היצע עונה עליו.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WHY NOW -->
+  <section id="now">
+    <div class="wrap">
+      <h2>למה עכשיו</h2>
+      <p class="sub">יוון הודיעה על העלאת מס הרכישה לרוכשים מחוץ לאיחוד האירופי: מ־3% ל־15%.</p>
+      <div class="now-grid">
+        <div class="card">
+          <h3 style="margin:0 0 4px">מה זה אומר על הדירה הזו, במחיר <span class="ltr">€125,000</span></h3>
+          <div class="calc">
+            <div><small>היום, כ־3%</small><b><span class="ltr">€3,750</span></b></div>
+            <div><small>אחרי השינוי, 15%</small><b><span class="ltr">€18,750</span></b></div>
+            <div class="hit"><small>ההפרש</small><b><span class="ltr">€15,000</span></b></div>
+          </div>
+          <p class="fine" style="margin:0">ההודעה פורסמה בספטמבר 2026. לפי הבהרת משרד האוצר היווני, המועד הצפוי הוא 1 ביולי 2027. החוק עדיין לא נחקק, וייתכנו שינויים וחריגים. אזרחי האיחוד האירופי (כולל ישראלים עם דרכון אירופי) אינם מושפעים.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 10px">ההזדמנות למי שסוגר מהר</h3>
+          <ol class="steps">
+            <li>חוסכים עד <strong class="ltr">€15,000</strong> במס הרכישה</li>
+            <li>מקבלים <strong class="ltr">€10,000</strong> במתנה לאבזור הדירה</li>
+            <li>מתחילים לשפץ ולהשכיר מוקדם יותר</li>
+          </ol>
+          <a class="btn" href="#contact" style="width:100%;margin-top:8px">אני רוצה לסגור לפני השינוי</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERKS -->
+  <section id="perks" class="alt">
+    <div class="wrap">
+      <h2>מה מקבלים מעבר לדירה</h2>
+      <p class="sub">הטבה, רישוי ומיסוי שעובדים לטובתכם.</p>
+      <div class="perks">
+        <div class="card perk gift"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1zm0 0c2-4 6-4 6-1s-6 1-6 1z"/></svg></span><span class="big ltr">€10,000</span><h3>מתנה לציוד ואבזור</h3><p>ריהוט, מכשירי חשמל, כלי מטבח ומצעים, כדי שהדירה תהיה מושלמת ומוכנה לאורחים מהיום הראשון. בתוקף לזמן מוגבל, לסוגרים עכשיו.</p></div>
+        <div class="card perk"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg></span><h3>מתאימה ל־Airbnb, עם רישום</h3><p>לדירה רישום להשכרה לטווח קצר. אפשר להשכיר לתיירים, או לשהיות ארוכות של סטודנטים ואנשי עסקים.</p></div>
+        <div class="card perk"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>מיסוי נוח ביוון</h3>
+          <ul class="checks">
+            <li><strong>15% מס</strong> על הכנסות משכירות עד <span class="ltr">€12,000</span> בשנה</li>
+            <li><strong>אין מס שבח ביוון</strong> במכירת דירה: מושעה מאז 2015, כרגע עד סוף 2026</li>
+            <li><strong>אמנה למניעת כפל מס</strong> בין ישראל ליוון, בתוקף מ־1998</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine" style="margin-top:14px">המידע על מיסוי הוא כללי ואינו מהווה ייעוץ מס. החבות בישראל תלויה במצבכם האישי, ומומלץ להתייעץ עם רואה חשבון.</p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <div class="contact">
         <h2>רוצים לשמוע עוד על Paioniou 22?</h2>
-        <p class="sub">השאירו פרטים ונחזור אליכם עם התוכנית העסקית המלאה של הנכס.</p>
+        <p class="sub">השאירו פרטים ונחזור אליכם עם התוכנית העסקית המלאה ופרטי ההטבה של <span class="ltr">€10,000</span>.</p>
         <form id="lead">
           <div><label for="name">שם מלא</label><input id="name" name="name" required autocomplete="name"></div>
           <div><label for="phone">טלפון</label><input id="phone" name="phone" type="tel" required autocomplete="tel" dir="ltr"></div>
@@ -311,6 +502,18 @@
 <footer>
   <div class="wrap">
     <div><strong>Red Berries</strong> · <a href="https://www.red-berries.com" target="_blank" rel="noopener">red-berries.com</a></div>
+    <details style="flex-basis:100%">
+      <summary>מקורות</summary>
+      <ul class="sources">
+        <li><a href="https://greekcitytimes.com/2026/01/08/athens-international-airport-serves-record-33-99-million-passengers" target="_blank" rel="noopener">Athens International Airport: 33.99M passengers in 2025</a></li>
+        <li><a href="https://greekcitytimes.com/2026/09/06/greece-property-transfer-tax-third-country-buyers" target="_blank" rel="noopener">Greece to raise property transfer tax to 15% for third-country buyers</a></li>
+        <li><a href="https://www.dnews.gr/eidhseis/oikonomia/608527/sto-15-apo-3-afksanetai-o-foros-metavivasis-gia-ypikoous-triton-xoron-freno-stis-mazikes-agores-akiniton" target="_blank" rel="noopener">Dnews: φόρος μεταβίβασης 15% για υπηκόους τρίτων χωρών</a></li>
+        <li><a href="https://kpmg.com/gr/en/insights/2025/11/tax-updates-20112025.html" target="_blank" rel="noopener">KPMG Greece: rental income tax brackets 2026</a></li>
+        <li><a href="https://www.aade.gr/en/citizens/texts-contracts-treaties-avoidance-double-taxation-greece" target="_blank" rel="noopener">AADE: Greece double taxation treaties (Israel)</a></li>
+        <li><a href="https://globallawexperts.com/greece-property-law-changes-2026/" target="_blank" rel="noopener">Capital gains tax suspension until 31.12.2026</a></li>
+        <li><a href="https://cigar-athens.aueb.gr/practicalities/getting-to-aueb" target="_blank" rel="noopener">AUEB: getting to campus (Victoria station)</a></li>
+      </ul>
+    </details>
   </div>
 </footer>
 
