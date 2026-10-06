@@ -204,6 +204,30 @@
   .opt li::before { content: "✓"; color: #2e9e48; font-weight: 800; }
   .opt li.con::before { content: "!"; color: #b26b00; width: .7em; text-align: center; }
 
+  /* Monthly income chart */
+  .chart { margin-top: 16px; position: relative; }
+  .chart-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .chart-head h3 { margin: 0; font-size: 19px; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { display: inline-block; width: 14px; height: 10px; border-radius: 3px; }
+  .legend i.line { height: 0; border-top: 2px dashed #2a78d6; border-radius: 0; }
+  .chart svg { display: block; width: 100%; height: auto; }
+  .chart .bar { fill: #b3122e; }
+  .chart .bar:hover, .chart .bar:focus { fill: #8e0e24; outline: none; }
+  .chart .grid { stroke: var(--line); stroke-width: 1; }
+  .chart .axis { fill: var(--muted); font: 13px Heebo, sans-serif; }
+  .chart .ref { stroke: #2a78d6; stroke-width: 2; stroke-dasharray: 6 5; }
+  .chart .ref-label { fill: var(--ink); font: 700 13px Heebo, sans-serif; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+  .tip {
+    position: absolute; pointer-events: none; background: var(--ink); color: #fff; font-size: 14px;
+    padding: 6px 10px; border-radius: 8px; white-space: nowrap; transform: translate(-50%, -110%); opacity: 0; transition: opacity .12s;
+  }
+  .tip b { display: block; font-size: 16px; }
+  .chart details { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .chart table { border-collapse: collapse; margin-top: 8px; width: 100%; }
+  .chart td, .chart th { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: start; }
+
   /* Why now */
   .calc { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 8px 0 16px; }
   .calc > div { border-radius: 14px; padding: 18px; background: var(--bg); border: 1px solid var(--line); }
@@ -498,6 +522,19 @@
           </ul>
         </div>
       </div>
+      <div class="card chart" id="str-chart">
+        <div class="chart-head">
+          <div><span class="tag static" style="margin-bottom:6px">תחזית</span><h3>כמה הדירה מכניסה, חודש אחרי חודש</h3></div>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:#b3122e"></i>Airbnb, דמי שכירות מהזמנות</span>
+            <span><i class="line"></i>השכרה לטווח ארוך, <span class="ltr">€600</span></span>
+          </div>
+        </div>
+        <div class="chart-plot" dir="ltr"></div>
+        <div class="tip" role="status" aria-live="polite"></div>
+        <p class="fine" style="margin:6px 0 0" id="str-chart-note"></p>
+        <details><summary>הצגה כטבלה</summary><table><thead><tr><th>חודש</th><th>Airbnb</th><th>טווח ארוך</th></tr></thead><tbody></tbody></table></details>
+      </div>
       <div class="card gap" style="margin-top:16px"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></svg></span><div><h3>איך לבחור</h3><p>ב־Airbnb ההוצאות השוטפות גבוהות יותר, ולכן ההכנסה נטו תלויה בתפוסה ובאופן הניהול. השאירו פרטים ונשלח לכם חישוב נטו מפורט לשני המסלולים.</p></div></div>
       <p class="fine" style="margin-top:14px">הסכומים הם הערכה ואינם התחייבות. הם מחושבים לפני עלויות רכישה (מס העברה 3.09%, נוטריון, רישום מקרקעין ועו״ד), הוצאות בעלים (ENFIA, ביטוח, תחזוקה) ומס הכנסה (15% עד <span class="ltr">€12,000</span> בשנה, 25% מעל). ההכנסה מ־Airbnb היא מחזור ברוטו, עונתית ותלויה ברגולציה.</p>
     </div>
@@ -616,6 +653,72 @@
     const days = Math.ceil((end - new Date()) / 86400000);
     const text = days > 1 ? `· נותרו ${days} ימים` : days === 1 ? "· יום אחרון!" : "· ההטבה הסתיימה";
     document.querySelectorAll(".countdown").forEach(el => { el.textContent = text; });
+  })();
+
+  // Airbnb monthly income chart.
+  // TO SWAP IN REAL DATA: replace `values` with 12 monthly booking-rent totals (Jan..Dec) and set kind: "actual".
+  const STR_MONTHLY = {
+    kind: "forecast",
+    values: [710, 770, 1000, 1240, 1420, 1530, 1590, 1530, 1480, 1300, 890, 940],
+    longTerm: 600,
+  };
+  (function () {
+    const box = document.getElementById("str-chart");
+    if (!box) return;
+    const months = ["ינו׳", "פבר׳", "מרץ", "אפר׳", "מאי", "יוני", "יולי", "אוג׳", "ספט׳", "אוק׳", "נוב׳", "דצמ׳"];
+    const v = STR_MONTHLY.values, lt = STR_MONTHLY.longTerm;
+    const total = v.reduce((a, b) => a + b, 0), avg = Math.round(total / 12);
+    const eur = n => "€" + n.toLocaleString("en-US");
+    const plot = box.querySelector(".chart-plot"), tip = box.querySelector(".tip");
+    const ns = "http://www.w3.org/2000/svg";
+
+    function draw() {
+      // Render in real CSS pixels so text stays 13px on every screen size.
+      const W = Math.max(300, Math.round(plot.clientWidth || 720));
+      const narrow = W < 480;
+      const H = narrow ? 240 : 300, L = narrow ? 40 : 48, R = 8, T = 16, B = 28;
+      const max = 2000, pw = W - L - R, ph = H - T - B, slot = pw / 12, gap = narrow ? 3 : 8, bw = slot - gap;
+      const y = n => T + ph - (n / max) * ph;
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", `הכנסה חודשית מ־Airbnb, ממוצע ${eur(avg)} לחודש, מול ${eur(lt)} בהשכרה לטווח ארוך`);
+      const el = (tag, attrs, text) => { const e = document.createElementNS(ns, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; svg.appendChild(e); return e; };
+      [0, 500, 1000, 1500, 2000].forEach(t => {
+        el("line", { x1: L, x2: W - R, y1: y(t), y2: y(t), class: "grid" });
+        el("text", { x: L - 6, y: y(t) + 4, "text-anchor": "end", class: "axis" }, t === 0 ? "0" : (narrow ? "€" + t / 1000 + "K" : eur(t)));
+      });
+      v.forEach((n, i) => {
+        const x = L + i * slot + gap / 2, h = y(0) - y(n), rr = Math.min(4, h / 2, bw / 2);
+        // bar: 4px rounded top, square at the baseline
+        const d = `M${x},${y(0)} V${y(n) + rr} Q${x},${y(n)} ${x + rr},${y(n)} H${x + bw - rr} Q${x + bw},${y(n)} ${x + bw},${y(n) + rr} V${y(0)} Z`;
+        const bar = el("path", { d, class: "bar", tabindex: "0", "aria-label": `${months[i]}: ${eur(n)}` });
+        const show = () => {
+          const bb = box.getBoundingClientRect(), sb = svg.getBoundingClientRect();
+          tip.innerHTML = `${months[i]}<b>${eur(n)}</b>`;
+          tip.style.left = (sb.left - bb.left + x + bw / 2) + "px";
+          tip.style.top = (sb.top - bb.top + y(n)) + "px";
+          tip.style.opacity = 1;
+        };
+        const hide = () => { tip.style.opacity = 0; };
+        bar.addEventListener("mouseenter", show); bar.addEventListener("focus", show);
+        bar.addEventListener("mouseleave", hide); bar.addEventListener("blur", hide);
+        bar.addEventListener("touchstart", show, { passive: true });
+        if (!narrow || i % 2 === 0) el("text", { x: x + bw / 2, y: H - 8, "text-anchor": "middle", class: "axis" }, months[i]);
+      });
+      el("line", { x1: L, x2: W - R, y1: y(lt), y2: y(lt), class: "ref" });
+      el("text", { x: W - R - 4, y: y(lt) - 7, "text-anchor": "end", class: "ref-label" }, `טווח ארוך ${eur(lt)}`);
+      plot.replaceChildren(svg);
+    }
+    draw();
+    let t; window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(draw, 150); });
+
+    box.querySelector("tbody").innerHTML = v.map((n, i) => `<tr><td>${months[i]}</td><td class="ltr">${eur(n)}</td><td class="ltr">${eur(lt)}</td></tr>`).join("")
+      + `<tr><th>סה״כ בשנה</th><th class="ltr">${eur(total)}</th><th class="ltr">${eur(lt * 12)}</th></tr>`;
+    box.querySelector("#str-chart-note").textContent = STR_MONTHLY.kind === "actual"
+      ? `נתוני הזמנות בפועל מדירה דומה בניהולנו, ב־12 החודשים האחרונים: ${eur(total)} בשנה, ממוצע ${eur(avg)} לחודש, לפני הוצאות תפעול.`
+      : `תחזית עונתית להמחשה, ולא נתוני הזמנות בפועל: ממוצע ${eur(avg)} לחודש (${eur(total)} בשנה), לפני הוצאות תפעול. בקיץ ההכנסה גבוהה מהממוצע ובחורף נמוכה ממנו.`;
+    if (STR_MONTHLY.kind === "actual") box.querySelector(".tag").textContent = "נתונים בפועל";
   })();
 
   document.getElementById("lead").addEventListener("submit", function (e) {
