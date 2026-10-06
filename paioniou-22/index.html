@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paioniou 22 | Red Berries</title>
-<meta name="description" content="דירת 73 מ״ר משופצת בקומה 2, Paioniou 22, אתונה. 2 חדרי שינה, 2 חדרי רחצה, 2 מרפסות ומעלית. €125,000.">
+<meta name="description" content="דירת 73 מ״ר בקומה 2, Paioniou 22, אתונה. 2 חדרי שינה, 2 חדרי רחצה ו־2 מרפסות. €125,000.">
 <meta property="og:title" content="Paioniou 22 · 73 מ״ר באתונה · €125,000">
-<meta property="og:description" content="2 חדרי שינה · 2 חדרי רחצה · 2 מרפסות · מעלית · תכנון אחרי שיפוץ">
-<meta property="og:image" content="assets/floor-plan.png">
+<meta property="og:description" content="2 חדרי שינה · 2 חדרי רחצה · 2 מרפסות · תוכנית אדריכל">
+<meta property="og:image" content="assets/before.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -68,6 +68,16 @@
   .ppsm { color: var(--muted); }
   .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+  .shot { position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--line); }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .tag {
+    position: absolute; top: 12px; inset-inline-start: 12px;
+    background: rgba(29, 26, 27, .78); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .hero .shot { aspect-ratio: 16 / 10; }
+
   /* Stats */
   .stats {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
@@ -94,32 +104,18 @@
   .floor img { width: 100%; height: auto; display: block; border-radius: 10px; background: #fff; }
   .floor figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
 
-  /* Benefits */
-  .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .benefit { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-  .benefit .ic {
-    width: 40px; height: 40px; border-radius: 10px; background: var(--brand-soft); color: var(--brand);
-    display: grid; place-items: center; font-weight: 800; margin-bottom: 12px;
-  }
-  .benefit h3 { margin: 0 0 6px; font-size: 19px; }
-  .benefit p { margin: 0; color: var(--muted); font-size: 16px; }
-
   /* Video */
   .video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   /* Media links */
-  .media-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+  .media-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
   .media-links a {
     display: block; text-decoration: none; background: var(--surface);
     border: 1px solid var(--line); border-radius: 12px; padding: 16px; font-weight: 700;
   }
   .media-links a small { display: block; color: var(--muted); font-weight: 400; font-size: 14px; }
   .media-links a:hover { border-color: var(--brand); }
-
-  /* Trust */
-  .trust { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-  .pill { background: var(--brand-soft); color: var(--brand); padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 15px; }
 
   /* Lead form */
   .contact { background: var(--ink); color: #fff; border-radius: 24px; padding: 40px 28px; }
@@ -142,8 +138,8 @@
 
   @media (max-width: 760px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .grid-2, .benefits { grid-template-columns: 1fr; }
-    .media-links { grid-template-columns: 1fr 1fr; }
+    .grid-2, .hero-grid { grid-template-columns: 1fr; }
+    .media-links { grid-template-columns: 1fr; }
     form { grid-template-columns: 1fr; }
     header.top .btn { display: none; }
     .sticky-cta {
@@ -168,9 +164,11 @@
   <!-- HERO -->
   <div class="hero">
     <div class="wrap">
+     <div class="hero-grid">
+      <div>
       <div class="eyebrow">אתונה · Attiki · <span class="ltr">Paioniou 22</span></div>
       <h1>73 מ״ר, 2 חדרי שינה,<br>2 מרפסות, במרכז אתונה.</h1>
-      <p class="lead">דירה בקומה שנייה בבניין עם מעלית, ברחוב חד־סטרי שקט במרכז אתונה. התכנון אחרי השיפוץ נבנה כדי להוציא מהדירה את מלוא הפוטנציאל העסקי.</p>
+      <p class="lead">דירה בקומה שנייה ב־Attiki, אתונה. תוכנית אדריכל מוכנה: 2 חדרי שינה, כל אחד עם חדר רחצה, סלון ומטבח פתוחים ומרפסת גדולה.</p>
 
       <div class="price-row">
         <div class="price"><span class="ltr">€125,000</span></div>
@@ -181,12 +179,18 @@
         <a class="btn" href="#contact">אני רוצה פרטים</a>
         <a class="btn ghost" href="#plan">לתוכנית הדירה</a>
       </div>
+      </div>
+      <figure class="shot">
+        <img src="assets/before.jpg" alt="חדר בדירה עם פרקט ויציאה למרפסת" width="463" height="244">
+        <span class="tag">צילום מהדירה · לפני שיפוץ</span>
+      </figure>
+     </div>
 
       <div class="stats">
-        <div class="stat"><b>73 מ״ר</b><small>+ מרפסות</small></div>
+        <div class="stat"><b>73 מ״ר</b><small>+ 2 מרפסות</small></div>
         <div class="stat"><b>2 + 2</b><small>חדרי שינה · חדרי רחצה</small></div>
-        <div class="stat"><b>קומה 2</b><small>מתוך 5, עם מעלית</small></div>
-        <div class="stat"><b>צפון · דרום</b><small>2 כיווני אוויר</small></div>
+        <div class="stat"><b>קומה 2</b><small>Attiki, אתונה</small></div>
+        <div class="stat"><b><span class="ltr">€1,712</span></b><small>למ״ר</small></div>
       </div>
     </div>
   </div>
@@ -194,7 +198,7 @@
   <!-- PLAN -->
   <section id="plan">
     <div class="wrap">
-      <h2>התוכנית אחרי השיפוץ</h2>
+      <h2>תוכנית הדירה</h2>
       <p class="sub">שני חדרי שינה, שני חדרי רחצה, סלון ומטבח פתוחים, מרפסת גדולה ומרפסת קטנה.</p>
       <div class="grid-2">
         <figure class="card floor" style="margin:0">
@@ -205,14 +209,12 @@
           <ul class="specs">
             <li><span>כתובת</span><strong class="ltr">Paioniou 22, Athens</strong></li>
             <li><span>אזור</span><strong>Attiki</strong></li>
-            <li><span>שטח</span><strong>73 מ״ר + מרפסות</strong></li>
-            <li><span>קומה</span><strong>2 מתוך 5</strong></li>
-            <li><span>חלוקה</span><strong>2 חד׳ שינה · 2 חד׳ רחצה · סלון ומטבח</strong></li>
-            <li><span>מרפסות</span><strong>2</strong></li>
-            <li><span>מעלית</span><strong>יש</strong></li>
-            <li><span>כיווני אוויר</span><strong>צפון (חזית) ודרום</strong></li>
-            <li><span>רחוב</span><strong>חד־סטרי</strong></li>
-            <li><span>בבניין</span><strong>3 דירות בקומה · 27 דיירים</strong></li>
+            <li><span>שטח</span><strong>73 מ״ר</strong></li>
+            <li><span>קומה</span><strong>2</strong></li>
+            <li><span>חדרי שינה</span><strong>2</strong></li>
+            <li><span>חדרי רחצה</span><strong>2</strong></li>
+            <li><span>מרפסות</span><strong>2 (גדולה + קטנה)</strong></li>
+            <li><span>מחיר למ״ר</span><strong class="ltr">€1,712</strong></li>
             <li><span>מחיר</span><strong class="ltr">€125,000</strong></li>
           </ul>
         </div>
@@ -224,36 +226,14 @@
   <section id="media">
     <div class="wrap">
       <h2>לראות את הדירה</h2>
-      <p class="sub">סרטון, תמונות ומצגת הנכס המלאה.</p>
+      <p class="sub">סרטון, אלבום תמונות ותשריטים.</p>
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/hdw3inwasYI" title="Paioniou 22 video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="media-links">
         <a href="https://photos.app.goo.gl/iysSSadd2EXBJkdf9" target="_blank" rel="noopener">תמונות<small>אלבום הנכס</small></a>
         <a href="https://photos.app.goo.gl/2tbshpCxpAxZsmbB8" target="_blank" rel="noopener">סיור וידאו<small>צולם בנכס</small></a>
-        <a href="https://canva.link/2c5ylavzgj23nc9" target="_blank" rel="noopener">מצגת הנכס<small>9 עמודים</small></a>
         <a href="https://drive.google.com/file/d/14y5KE26qsa3Q8Ui7Ax7K5JNxLMyZLvT-/view?usp=sharing" target="_blank" rel="noopener">תשריט<small>באיכות מלאה</small></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY RENOVATED -->
-  <section id="why">
-    <div class="wrap">
-      <h2>למה דירה משופצת</h2>
-      <p class="sub">אחרי שנים של ניהול נכסים באתונה, זה מה שראינו שעובד.</p>
-      <div class="benefits">
-        <div class="benefit"><div class="ic">1</div><h3>שוכרים איכותיים</h3><p>סטנדרט אחיד מושך שוכרים שמוכנים לשלם יותר.</p></div>
-        <div class="benefit"><div class="ic">2</div><h3>פחות הפתעות</h3><p>אחריות על תשתיות, פחות הוצאות תחזוקה.</p></div>
-        <div class="benefit"><div class="ic">3</div><h3>קל למכור ברווח</h3><p>השבחת הנכס מעלה את שוויו ומחזירה את ההשקעה.</p></div>
-        <div class="benefit"><div class="ic">4</div><h3>בלי עלויות נסתרות</h3><p>אין עלויות נוספות כמו שיפוץ גג ושטחים משותפים.</p></div>
-        <div class="benefit"><div class="ic">5</div><h3>תכנון עסקי</h3><p>חלוקה ל־2 חדרי שינה עם חדר רחצה לכל אחד.</p></div>
-        <div class="benefit"><div class="ic">6</div><h3>ליווי מלא</h3><p>משרד באתונה ומשרד בישראל, מהקנייה ועד הניהול.</p></div>
-      </div>
-      <div class="trust">
-        <span class="pill">אישור מהנדס</span>
-        <span class="pill">חברת ניהול</span>
-        <span class="pill">ביטוח מבנה</span>
       </div>
     </div>
   </section>
@@ -286,7 +266,6 @@
 <footer>
   <div class="wrap">
     <div><strong>Red Berries</strong> · <a href="https://www.red-berries.com" target="_blank" rel="noopener">red-berries.com</a></div>
-    <div>משרד אתונה: <span class="ltr">Gamveta 4, Athens</span> · משרד ישראל: תובל 40, רמת גן</div>
   </div>
 </footer>
 
